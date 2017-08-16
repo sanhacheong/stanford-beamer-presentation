@@ -1,0 +1,132 @@
+\documentclass[pdf]{beamer}
+%\mode<presentation>{}
+
+\usepackage{amssymb,amsmath,amsthm,enumerate}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{amsfonts,amscd}
+%\usepackage{gensymb}
+\usepackage[]{units}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{physics}
+
+%new commands
+\newcommand{\der}[2]{\frac{d#1}{d#2}}
+\newcommand{\nder}[3]{\frac{d^#1 #2}{d #3 ^ #1}}
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\npder}[3]{\frac{\partial ^#1 #2}{\partial #3^#1}}
+\newcommand{\sentencelist}{def}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\lined}{\overbar}
+\newcommand{\perm}[2]{{}^{#1}\!P_{#2}}
+\newcommand{\comb}[2]{{}^{#1}C_{#2}}
+\newcommand{\intall}{\int_{-\infty}^{\infty}}
+\newcommand{\Var}[1]{\text{Var}\left(#1\right)}
+\newcommand{\E}[1]{\text{E}\left(#1\right)}
+\newcommand{\define}{\equiv}
+\newcommand{\diff}[1]{\mathrm{d}#1}
+\newcommand{\empy}[1]{{\color{darkorange}\emph{#1}}}
+\newcommand{\empr}[1]{{\color{cardinalred}\emph{#1}}}
+
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\theoremstyle{definition}
+
+\newcommand{\examplebox}[2]{
+\begin{tcolorbox}[colframe=darkcardinal,colback=boxgray,title=#1]
+#2
+\end{tcolorbox}}
+
+\newcommand{\eld}[1]{\frac{d}{dt}(\frac{\partial L}{\partial \dot #1}) - \frac{\partial L}{\partial #1}=0}
+\newcommand{\euler}[1]{\frac{\partial L}{\partial #1}-\frac{d}{dt}(\frac{\partial L}{\partial \dot #1})}
+\newcommand{\eulerg}[1]{\frac{\partial g}{\partial #1}-\frac{d}{dt}(\frac{\partial g}{\partial \dot #1})}
+\newcommand{\divg}[1]{\nabla\cdot #1}
+\newcommand{\prob}[1]{P(#1\vert I)}
+
+
+
+\usetheme{Stanford} 
+\input{./style_files_stanford/my_beamer_defs.sty}
+\logo{\includegraphics[height=0.4in]{./style_files_stanford/SU_New_BlockStree_2color.png}}
+
+
+
+\title[Buzz Words, maybe Clever Abbreviations]{Some Cool Sounding Buzzwords}
+\subtitle{Less Buzzy and Somewhat More Explanaotry Subtitle}
+
+
+\beamertemplatenavigationsymbolsempty
+
+\begin{document}
+
+
+
+\author[S. Cheong, Stanford]{
+	\begin{tabular}{c} 
+	\Large
+	Sanha Cheong\\
+    \footnotesize \href{mailto:sanha@stanford.edu}{sanha@stanford.edu}
+\end{tabular}
+\vspace{-4ex}}
+
+\institute{
+	\includegraphics[height=0.4in]{./style_files_stanford/SU_New_BlockStree_2color.png}\\
+	Department of Physics\\
+	Stanford University}
+
+\date{\today}
+
+\begin{noheadline}
+\begin{frame}\maketitle\end{frame}
+\end{noheadline}
+
+
+
+\begin{frame}{Goals}
+The main goals for this slide:
+\begin{itemize}
+	\item This is just to show you how this \empy{template} works
+	\item There are two `emphasize' functions used to highlight \& italicize texts
+	\begin{itemize}
+		\item `\textbackslash empy' does \empy{this} and `\textbackslash empr' does \empr{this}.
+	\end{itemize}
+	\item The colors in this template is selected from the official Stanford Identity website: \href{https://identity.stanford.edu/color.html}{https://identity.stanford.edu/color.html}
+	\item Note that hyperlinks, by default, are not highlighted. Of course, you can change this: e.g., \empr{\href{https://github.com/sanhacheong/stanford_beamer_template}{https://github.com/sanhacheong/stanford\_beamer\_template}}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Example}
+A (hopefully) useful function in this \LaTeX~template is:
+\begin{center}
+	\textbackslash examplebox\{ExampleTitle\}\{ExampleContents\}
+\end{center}
+which does this:
+\examplebox{Example of the Command \textbackslash examplebox}{
+This is what it does. Pretty self-explanatory, isn't it?
+
+Given the color them, I \empr{recommend} using \textbackslash empr inside of examplebox. The \textbackslash empy command does not look \empy{that} good.
+}
+\end{frame}
+
+
+
+\begin{frame}{References}
+\begin{thebibliography}{3}
+	\bibitem{myself}
+	S.~Cheong. \empr{\href{https://github.com/sanhacheong/stanford_beamer_template}{https://github.com/sanhacheong/stanford\_beamer\_template}}. {GitHub}, August 2017.
+\end{thebibliography}
+\end{frame}
+
+\end{document}
